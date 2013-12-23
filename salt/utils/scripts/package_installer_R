@@ -1,0 +1,26 @@
+#!/bin/sh
+PATH=/bin:/usr/bin:/sbin:/usr/sbin:/usr/local/bin:/usr/local/sbin
+export PATH
+
+cat > /var/tmp/package_installer.R <<!!EOF
+install.packages("dismo", lib="/usr/local/lib/R/Library", repos="http://cran.ms.unimelb.edu.au")
+install.packages("SDMTools", lib="/usr/local/lib/R/Library", repos="http://cran.ms.unimelb.edu.au")
+install.packages("gbm", lib="/usr/local/lib/R/Library", repos="http://cran.ms.unimelb.edu.au")
+install.packages("rgdal", lib="/usr/local/lib/R/Library", repos="http://cran.ms.unimelb.edu.au")
+install.packages("pROC", lib="/usr/local/lib/R/Library", repos="http://cran.ms.unimelb.edu.au")
+install.packages("R2HTML", lib="/usr/local/lib/R/Library", repos="http://cran.ms.unimelb.edu.au")
+install.packages("png", lib="/usr/local/lib/R/Library", repos="http://cran.ms.unimelb.edu.au")
+install.packages("biomod2", lib="/usr/local/lib/R/Library", repos="http://cran.ms.unimelb.edu.au")
+install.packages("gstat", lib="/usr/local/lib/R/Library", repos="http://cran.ms.unimelb.edu.au")
+install.packages("deldir", lib="/usr/local/lib/R/Library", repos="http://cran.ms.unimelb.edu.au")
+install.packages("rJava", lib="/usr/local/lib/R/Library", repos="http://cran.ms.unimelb.edu.au")
+install.packages("png", lib="/usr/local/lib/R/Library", repos="http://cran.ms.unimelb.edu.au")
+install.packages("rjson", lib="/usr/local/lib/R/Library", repos="http://cran.ms.unimelb.edu.au")
+install.packages("tools", lib="/usr/local/lib/R/Library", repos="http://cran.ms.unimelb.edu.au")
+!!EOF
+JAVA_HOME=/usr/lib/jvm/java-1.7.0-openjdk-1.7.0.45.x86_64
+export JAVA_HOME
+PATH=$JAVA_HOME/bin:$PATH
+export PATH
+R CMD javareconf
+R CMD BATCH /var/tmp/package_installer.R
