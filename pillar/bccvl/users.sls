@@ -34,3 +34,7 @@ users:
 #   uid: 506
 #   gid: 506
 #   key.pub: True
+  bccvl:
+    uid: 511
+    gid: 511
+    key.pub: True
