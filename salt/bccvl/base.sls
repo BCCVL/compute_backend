@@ -47,7 +47,7 @@ Erpel Packages:
 /etc/sudoers:
   file:
     - managed
-    - source: salt://etc/sudoers
+    - source: salt://utils/etc/sudoers
     - user: root
     - mode: 400
 
