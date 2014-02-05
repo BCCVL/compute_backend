@@ -50,3 +50,17 @@ Erpel Packages:
     - user: root
     - mode: 400
 
+iptables:
+  pkg:
+    - installed
+  service:
+    - running
+    - enable: True
+    - require:
+      - file: /etc/sysconfig/iptables
+
+/etc/sysconfig/iptables:
+  file:
+    - managed
+    - source: salt://utils/etc/sysconfig/iptables
+
