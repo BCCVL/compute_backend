@@ -45,7 +45,8 @@ Erpel Packages:
       - pkgrepo: erpel
 
 /etc/sudoers:
-  file.present:
+  file:
+    - managed
     - source: salt://etc/sudoers
     - user: root
     - mode: 400
