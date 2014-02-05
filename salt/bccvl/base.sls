@@ -43,3 +43,10 @@ Erpel Packages:
       - python27
     - require:
       - pkgrepo: erpel
+
+/etc/sudoers:
+  file.present:
+    - source: salt://etc/sudoers
+    - user: root
+    - mode: 400
+
