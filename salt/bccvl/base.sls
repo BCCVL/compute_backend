@@ -1,10 +1,18 @@
-
 erpel:
   pkgrepo.managed:
     - humanname: CentOS-$releasever - Erpel
     - baseurl: http://mirror.griffith.edu.au/pub/erpel/CentOS/$releasever/erpel/
     - gpgcheck: 0
     - enabled: 1
+
+security_shibboleth:
+  pkgrepo.managed:
+    - humanname: Shibboleth (CentOS_CentOS-6)
+    - type: rpm-md
+    - baseurl: http://download.opensuse.org/repositories/security:/shibboleth/CentOS_CentOS-6/
+    - gpgcheck: 1
+    - gpgkey: http://download.opensuse.org/repositories/security:/shibboleth/CentOS_CentOS-6/repodata/repomd.xml.key
+    - enabled: 0
 
 Install Epel Repository:
   pkg.installed:
@@ -19,6 +27,7 @@ Install Elgis Repository:
 ElGIS Packages:
   pkg.installed:
     - pkgs:
+      - postgis
       - postgis-client
       - proj-epsg
       - proj-nad
@@ -37,10 +46,16 @@ EPEL Packages:
     - require:
       - pkg: Install Epel Repository
 
-Erpel Packages:
+Shibboleth Packages:
   pkg.installed:
     - pkgs:
-      - python27
+      - shibboleth
+    - require:
+      - pkgrepo: security_shibboleth
+      - pkgrepo: erpel
+
+python27:
+  pkg.installed:
     - require:
       - pkgrepo: erpel
 

@@ -1,0 +1,5 @@
+
+# space separated list of backends to start on boot
+AUTOSTART_STORES="bccvl"
+# space separated list of http fronteds to start on boot
+AUTOSTART_HTTP="bccvl"
