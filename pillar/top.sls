@@ -43,3 +43,25 @@ base:
     - bccvl.python
     - bccvl.data_mover
     - bccvl.sshkeys
+  'bccvl-qa-combined':
+    - bccvl.supervisord
+    - bccvl.httpd
+    - bccvl.ssl
+    - bccvl.plone
+    - bccvl.visualiser
+    - bccvl.users
+    - bccvl.virtualenv
+    - bccvl.python
+    - bccvl.data_mover
+    - bccvl.sshkeys
+  'bccvl-test-combined':
+    - bccvl.supervisord
+    - bccvl.httpd
+    - bccvl.ssl
+    - bccvl.plone
+    - bccvl.visualiser
+    - bccvl.users
+    - bccvl.virtualenv
+    - bccvl.python
+    - bccvl.data_mover
+    - bccvl.sshkeys

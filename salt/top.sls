@@ -2,6 +2,8 @@
 base:
   'bccvl-compute-1':
     - bccvl.compute
+  'bccvl-compute-2':
+    - bccvl.compute
   'bccvl-compute-3':
     - bccvl.compute
   'bccvl-compute-qa':
@@ -12,5 +14,9 @@ base:
     - bccvl.visualiser
   'data-mover':
     - bccvl.data_mover
-  'bccvl-combined-qa':
+  'combined':
+    - bccvl.combined
+  'bccvl-qa-combined':
+    - bccvl.combined
+  'bccvl-test-combined':
     - bccvl.combined
